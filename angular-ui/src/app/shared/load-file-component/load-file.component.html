@@ -1,0 +1,40 @@
+<mat-card class="load-file-card">
+    <mat-card-header>
+        <mat-card-title class="dance-script">Upload File</mat-card-title>
+    </mat-card-header>
+    <mat-divider class="divider"></mat-divider>
+
+    <mat-card-content>
+        <p>Select a PDF file to load:</p>
+        <input #fileInput type="file" accept=".pdf" hidden (change)="onFileSelected($event)" />
+        <button mat-raised-button color="primary" (click)="fileInput.click()">
+            <mat-icon>attach_file</mat-icon>
+            Choose File
+        </button>
+
+        <span *ngIf="selectedFileName" class="file-name">
+            {{ selectedFileName }}
+        </span>
+    </mat-card-content>
+
+    <mat-divider class="divider"></mat-divider>
+    <mat-card-content>
+        <button mat-raised-button color="primary"
+            [disabled]="!(selectedFile&&selectedFileName&&fileStateService.getFileType()==='uploaded')"
+            (click)="onDoTranslate()">
+            <mat-icon>translate</mat-icon>
+            Do translate
+        </button>
+
+    </mat-card-content>
+
+    <mat-divider class="divider"></mat-divider>
+
+    <mat-card-actions>
+        <button mat-button color="accent" [disabled]="!(fileStateService.getFileType()==='translated')"
+            (click)="downloadTranslatedFile()">
+            <mat-icon>cloud_download</mat-icon>
+            Download File
+        </button>
+    </mat-card-actions>
+</mat-card>

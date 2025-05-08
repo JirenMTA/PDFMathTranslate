@@ -1,0 +1,20 @@
+<div class="show-file">
+    <div class="pdf-viewer-container">
+        <iframe *ngIf="!isLoading && !hasError" [src]="sanitizedUrl" frameborder="0"></iframe>
+        <!-- <iframe src="https://www.orimi.com/pdf-test.pdf"></iframe> -->
+        <div *ngIf="isLoading" class="loading-state">
+            Loading PDF...
+            <mat-progress-bar *ngIf="stateSvc.isLoading()" mode="indeterminate" class="my-2">
+            </mat-progress-bar>
+        </div>
+        <div *ngIf="hasError" class="error-state">
+            Failed to load PDF
+        </div>
+
+        <div class="pdf-controls">
+            <button mat-raised-button color="primary" (click)="prevPage()">&lt;</button>
+            <mat-chip color="primary" selected>Page {{currentPage}}</mat-chip>
+            <button mat-raised-button color="primary" (click)="nextPage()">&gt;</button>
+        </div>
+    </div>
+</div>

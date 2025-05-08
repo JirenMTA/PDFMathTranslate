@@ -1,0 +1,23 @@
+.main-container {
+    padding: 20px;
+    height: 85vh;
+    font-family: 'Dancing Script', serif;
+}
+
+.container-file {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.left-side {
+    flex: 0 0 40%;
+    padding: 10px;
+}
+
+.right-side {
+    flex: 0 0 60%;
+    height: 100%;
+    background-color: #fff;
+    margin-right: 10px;
+}

@@ -1,0 +1,95 @@
+.show-file {
+    height: 100%;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-radius: 8px;
+    margin-left: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    .pdf-viewer-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .pdf-controls {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        button,
+        mat-chip {
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            min-width: 40px;
+            padding: 0 12px;
+            box-sizing: border-box;
+            font-family: 'Playfair Display', serif;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        ::ng-deep .mat-mdc-standard-chip .mdc-evolution-chip__outline {
+            display: none;
+        }
+
+
+        ::ng-deep .mat-mdc-standard-chip {
+            background-color: transparent;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 16px;
+            transition: box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        ::ng-deep .mat-mdc-standard-chip:hover {
+            border-color: rgba(250, 249, 249, 0.2);
+            box-shadow: 0 4px 8px rgba(233, 230, 230, 0.3);
+        }
+
+        ::ng-deep .mat-mdc-standard-chip .mdc-evolution-chip__text-label {
+            font-family: 'Dancing Script', cursive;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+
+    }
+
+}
+
+.loader {
+    padding: 1rem;
+    text-align: center;
+}
+
+.error {
+    padding: 1rem;
+    color: #fff;
+    background: #f44336;
+    border-radius: .5rem;
+    margin-bottom: 1rem;
+}
+
+
+
+// iframe {
+//     width: 100%;
+//     height: 100%;
+//     border: none;
+// }
